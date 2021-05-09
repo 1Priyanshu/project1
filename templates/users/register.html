@@ -1,0 +1,32 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTA-8">
+        <meta name="viewpoint" content="width-device-width, initial scale-1.0">
+        <style>
+            #op{
+                background-color:aquamarine;
+            }
+        </style>
+        <title>none</title>
+    </head>
+    <div class ="content-section" id="op">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Join Today</legend>
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Sign up</button>
+        </form> 
+        <div class="border-top pt-3">
+            <small  class ="text-muted">
+                Already Have an account <a class="ml-2" href='#'>Sign in</a>
+            </small>
+        </div>
+    </div>
+{% endblock content %}
